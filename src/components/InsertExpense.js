@@ -7,6 +7,8 @@ import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import NumberFormat from 'react-number-format';
 import PropTypes from 'prop-types';
+import Snackbar from '@material-ui/core/Snackbar';
+import Fade from '@material-ui/core/Fade';
 
 //Adding js styles
 const styles = theme => (
@@ -190,6 +192,11 @@ const styles = theme => (
 }     
 
   //functions for various Onchange events
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };
+
   handleChange1 = event => {
     this.setState({ date: event.target.value });
     console.log(this.state.date);
@@ -226,12 +233,8 @@ const styles = theme => (
     console.log("dfdf");
     axios.post(`http://localhost:8081/tracker/register/addexpense?USER_ID=${this.props.message}&ITEM=${this.state.item}&CATEGORY_ID=${this.state.selex.value}&AMOUNT=${this.state.amount}&TRANSACTION_DATE=${this.state.date}`)    .then(res => {
       console.log("res="+res);
-      alert('Insertion successfull');
-
-      
+      this.setState({ open: true });
     })
-    window.location.reload(false);
-   
   }
 
   render() {
@@ -313,9 +316,19 @@ const styles = theme => (
 
             {/* Submit button */}
 
-            <Button className={classes.Button}  variant="contained" disableElevation type="submit">
-            ADD EXPENSE
-            </Button>
+            <div> 
+             <Button className={classes.Button}  variant="contained" disableElevation type="submit">
+                  ADD EXPENSE
+             </Button>
+              <Snackbar
+                  open={this.state.open}
+                  onClose={this.handleClose}
+                  TransitionComponent={Fade}
+                  autoHideDuration={1000}
+                  variant="success"
+                  message={<span  id="message-id">Expense Insertion Successfull</span>}
+            /> 
+           </div>
 
           
         </form>
