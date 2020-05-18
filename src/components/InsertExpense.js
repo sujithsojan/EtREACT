@@ -237,11 +237,11 @@ const styles = theme => (
   render() {
 
 
-    // var date = new Date();
+    var moment = require('moment');
+    var dateIn = moment(date);
+    var formatedDate=dateIn.format("YYYY-MM-DD");
+    console.log(formatedDate);
 
-    // var formatedDate = `${date.getMonth()+1}-${date.getDate()}-${date.getFullYear()}`
-        
-    // console.log(formatedDate);
     const { classes } = this.props;
 
     //Mapping result into label and value
@@ -263,6 +263,7 @@ const styles = theme => (
                     onChange={this.handleChange1}
                     name="date" 
                     type="date"
+                    defaultValue={formatedDate}
                     className={classes.datepickerx}
                     required                    
                     />
