@@ -12,7 +12,7 @@ export default class TotalBaryr extends Component
     }
        
       componentDidMount() {
-        axios.get(`http://localhost:8081/tracker/register/TotalExpenseTotalIncomeBar_year`,{params:{uSER_ID: this.props.message}})
+        axios.get(`http://localhost:8081/tracker/register/TotalExpenseTotalIncomeBar_year`,{params:{userId: this.props.message}})
           .then(res => {
             
             let amount=[];

@@ -16,6 +16,7 @@ var moment = require('moment');
 var dateIn = moment(date);
 var formatedDate=dateIn.format("YYYY-MM-DD");
 
+
 //Adding js styles
 const styles = theme => (
     {
@@ -175,7 +176,6 @@ const styles = theme => (
     constructor(props){
     super(props);
     this.state = {
-    date:formatedDate,
     item:'',
     amount:'',
     category:'',
@@ -237,10 +237,12 @@ const styles = theme => (
   handleSubmit = event => {
     event.preventDefault();
     console.log("dfdf");
-    // axios.post(`http://localhost:8081/tracker/register/addincome?USER_ID=${this.props.message}&ITEM=${this.state.item}&CATEGORY_ID=${this.state.selex.value}&AMOUNT=${this.state.amount}&TRANSACTION_DATE=${this.state.date}`)    .then(res => {
-    //   console.log("res="+res);
-    //   this.setState({ open: true,amount:'',item:'',selex:'',date:formatedDate });    })
+
+    axios.post(`http://localhost:8081/tracker/register/addincome?USER_ID=${this.props.message}&ITEM=${this.state.item}&CATEGORY_ID=${this.state.selex.value}&AMOUNT=${this.state.amount}&TRANSACTION_DATE=${this.state.date}`)    .then(res => {
+      console.log("res="+res);
+      this.setState({ open: true,amount:'',item:'',selex:'',date:formatedDate });    })
     this.setState({ open: true});
+
 
   }
 
@@ -328,7 +330,7 @@ const styles = theme => (
                   onClose={this.handleClose}
                   TransitionComponent={Fade}
                   autoHideDuration={1000}
-                  message={<span  id="message-id">Insertion Successfull</span>}
+                  message={<span  id="message-id">Income Insertion Successfull</span>}
             /> 
            </div>
 

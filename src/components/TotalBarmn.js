@@ -12,7 +12,7 @@ export default class TotalBarmn extends Component
     }
        
       componentDidMount() {
-        axios.get(`http://localhost:8081/tracker/register/TotalExpenseTotalIncomeBar_month`,{params:{uSER_ID: this.props.message}})
+        axios.get(`http://localhost:8081/tracker/register/TotalExpenseTotalIncomeBar_month`,{params:{userId: this.props.message}})
           .then(res => {
             let amount=[];
             amount.push(res.data.TotalIncome);
