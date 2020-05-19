@@ -12,7 +12,7 @@ export default class CategoryBaryr extends Component
    }
       
      componentDidMount() {
-       axios.get(`http://localhost:8081/tracker/register/yearlycategorysum`,{params:{uSER_ID: this.props.message}})
+       axios.get(`http://localhost:8081/tracker/register/yearlycategorysum`,{params:{userId: this.props.message}})
          .then(res => {
        const response = res.data;
        let category=[];

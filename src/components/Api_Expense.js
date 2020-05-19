@@ -14,7 +14,7 @@ class Expense extends Component{
         "07":"July","08":"August","09":"September","10":"October","11":"November","12":"December",};
         console.log(this.props.dataA)
         if(this.props.dataA){
-            axios.get("http://localhost:8081/tracker/register/getIncome",{ params: {uSER_ID:this.props.message}})
+            axios.get("http://localhost:8081/tracker/register/getIncome",{ params: {userId:this.props.message}})
             .then(res => {
                 for (var key in res.data) {
                     parts=res.data[key].DATE.split("-");
@@ -28,7 +28,7 @@ class Expense extends Component{
         }
         
         if(this.props.dataB){
-            axios.get("http://localhost:8081/tracker/register/getExpense",{ params: {uSER_ID:this.props.message}})
+            axios.get("http://localhost:8081/tracker/register/getExpense",{ params: {userId:this.props.message}})
             .then(res => {
                 for (var key in res.data) {
                     parts=res.data[key].DATE.split("-");
@@ -41,7 +41,7 @@ class Expense extends Component{
         }
 
         if(this.props.dataBoth){
-            axios.get("http://localhost:8081/tracker/register/getIncomeExpense",{ params: {uSER_ID: this.props.message}})
+            axios.get("http://localhost:8081/tracker/register/getIncomeExpense",{ params: {userId: this.props.message}})
             .then(res => {
                 for (var key in res.data) {
                     parts=res.data[key].DATE.split("-");

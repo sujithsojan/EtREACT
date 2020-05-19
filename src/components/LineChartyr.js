@@ -11,7 +11,7 @@ export default class LineChartyr extends React.Component {
     }
   }
   componentDidMount() {
-    axios.get(`http://localhost:8081/tracker/register/TotalExpenseTotalIncomeLine_year`,{params:{uSER_ID: this.props.message}})
+    axios.get(`http://localhost:8081/tracker/register/TotalExpenseTotalIncomeLine_year`,{params:{userId: this.props.message}})
       .then(res => {
         const response = res.data;
         let month=[];

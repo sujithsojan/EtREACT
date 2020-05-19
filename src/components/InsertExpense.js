@@ -9,7 +9,10 @@ import NumberFormat from 'react-number-format';
 import PropTypes from 'prop-types';
 import Snackbar from '@material-ui/core/Snackbar';
 import Fade from '@material-ui/core/Fade';
-
+var date = new Date();
+    var moment = require('moment');
+    var dateIn = moment(date);
+    var formatedDate=dateIn.format("YYYY-MM-DD");
 //Adding js styles
 const styles = theme => (
     {
@@ -169,7 +172,7 @@ const styles = theme => (
     constructor(props){
     super(props);
     this.state = {
-    date:'',
+    date:formatedDate,
     item:'',
     amount:'',
     category:'',
@@ -231,7 +234,7 @@ const styles = theme => (
     
     event.preventDefault();
     console.log("dfdf");
-    axios.post(`http://localhost:8081/tracker/register/addexpense?USER_ID=${this.props.message}&ITEM=${this.state.item}&CATEGORY_ID=${this.state.selex.value}&AMOUNT=${this.state.amount}&TRANSACTION_DATE=${this.state.date}`)    .then(res => {
+    axios.post(`http://localhost:8081/tracker/register/addexpense?userId=${this.props.message}&item=${this.state.item}&categoryId=${this.state.selex.value}&amount=${this.state.amount}&transactionDate=${this.state.date}`)    .then(res => {
       console.log("res="+res);
       this.setState({ open: true });
     })
@@ -239,10 +242,7 @@ const styles = theme => (
 
   render() {
 
-
-    var moment = require('moment');
-    var dateIn = moment(date);
-    var formatedDate=dateIn.format("YYYY-MM-DD");
+    
     console.log(formatedDate);
 
     const { classes } = this.props;
