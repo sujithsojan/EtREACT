@@ -27,7 +27,7 @@ class CheckBox extends Component{
     if (isCheckedB && isCheckedA){ both = <Expense dataBoth={this.state.isCheckedA} message = {this.props.message}/>; }
     return(
       <div>
-        <header style={{paddingTop:"10px", paddingBottom:"50px"}}>
+        <header style={{paddingTop:"10px", paddingBottom:"50px", }}>
           <div class="row" id="id">
             <div class="block"><FormControlLabel 
                 control={<Checkbox  style={{color:"#F35B8C", visibility:"visible"}} name="checkedA" onChange={ this.handleCheckedA }/>}
