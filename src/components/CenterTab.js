@@ -67,7 +67,7 @@ const useStyles1 = makeStyles((theme) => ({
       backgroundColor: '#69B5FF',
       fontSize:35,
     fontFamily:"Source Sans Pro Bold",
-    fontSize:35,
+    // fontSize:35,
     
     color: "white",
     '&:hover': {

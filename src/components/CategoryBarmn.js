@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import {HorizontalBar} from 'react-chartjs-2';
 import axios from 'axios';
 import * as API from '../constants/Api';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
+import Chart from "chart.js";
+Chart.plugins.unregister(ChartDataLabels);
 export default class Categorybarmn extends Component
 {
    constructor(props) {
@@ -46,7 +49,8 @@ export default class Categorybarmn extends Component
             data = {this.state.Data}
             options = {chartoptions} 
             width= {350}
-            height={100} />
+            height={100} 
+            plugins={[ChartDataLabels]}/>
         </div>
       )
    }   
@@ -77,9 +81,9 @@ barDatasetSpacing : 1,
       yAxes:[{
     
         ticks: {
-            display: true,
+            display: false,
             beginAtZero : true,
-            padding: -680,
+            //padding: -680,
             fontSize: 15,
             
         },
@@ -91,5 +95,32 @@ barDatasetSpacing : 1,
             color: "rgba(0, 0, 0, 0)"
         }   
     }]
+},
+plugins: {
+  datalabels: {
+    align: function(context) {
+      var index = context.dataIndex;
+      var value = context.dataset.data[index];
+      var invert = Math.abs(value) <= 1;
+      return value < 1 ? 'right' : 'right'
+    },
+    anchor: 'end',
+    backgroundColor: null,
+    borderColor: null,
+    borderRadius: 4,
+    borderWidth: 1,
+    color: '#000000',
+    font: {
+      size: 15,
+      weight: 600
+    },
+    offset: 4,
+    padding: 0,
+    formatter: function(value, context) {
+      return context.chart.data.labels[context.dataIndex];
+    }
+  }
 }
+
+
 }

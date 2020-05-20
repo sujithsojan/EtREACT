@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {HorizontalBar} from 'react-chartjs-2';
 import axios from 'axios';
 import * as API from '../constants/Api';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 export default class TotalBarmn extends Component
 {
@@ -42,7 +43,8 @@ export default class TotalBarmn extends Component
           <HorizontalBar
             data = {this.state.Data}
             options = {chartoptions}
-            width= {400}  />
+            width= {400} 
+            plugins={[ChartDataLabels]} />
         </div>
       )
    }   
@@ -91,29 +93,56 @@ responsive: true,
 
 }]
 },
-animation: {
- duration: 1,
- onComplete: function () {
-     var chartInstance = this.chart,
-         ctx = chartInstance.ctx;
-     ctx.textAlign = 'left';
+plugins: {
+  datalabels: {
+    align: function(context) {
+      var index = context.dataIndex;
+      var value = context.dataset.data[index];
+      var invert = Math.abs(value) <= 1;
+      return value < 1 ? 'right' : 'right'
+    },
+    anchor: 'start',
+    backgroundColor: null,
+    borderColor: null,
+    borderRadius: 4,
+    borderWidth: 1,
+    color: '#ffffff',
+    font: {
+      size: 25,
+      weight: 600
+    },
+    offset: 4,
+    padding: 0,
+    formatter: function(value) {
+      return Math.round(value * 10) / 10
+    }
+  }
+}
+
+
+// animation: {
+//  duration: 1,
+//  onComplete: function () {
+//      var chartInstance = this.chart,
+//          ctx = chartInstance.ctx;
+//      ctx.textAlign = 'left';
     
-     ctx.fillStyle = "rgba(255, 255, 255, 255)";
-     ctx.textBaseline = 'centre';
+//      ctx.fillStyle = "rgba(255, 255, 255, 255)";
+//      ctx.textBaseline = 'centre';
      
      
 
-     this.data.datasets.forEach(function (dataset, i) {
-         var meta = chartInstance.controller.getDatasetMeta(i);
-         meta.data.forEach(function (bar, index) {
-             var data = dataset.data[index];
-             ctx.fillText(data, (bar._model.x-bar._model.x)+10, bar._model.y -5);
+//      this.data.datasets.forEach(function (dataset, i) {
+//          var meta = chartInstance.controller.getDatasetMeta(i);
+//          meta.data.forEach(function (bar, index) {
+//              var data = dataset.data[index];
+//              ctx.fillText(data, (bar._model.x-bar._model.x)+10, bar._model.y -5);
              
 
-         });
-     });
- }
-}
+//          });
+//      });
+//  }
+// }
 }
 
  

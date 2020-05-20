@@ -318,7 +318,7 @@ const styles = theme => (
 
             <div> 
              <Button className={classes.Button}  variant="contained" disableElevation type="submit">
-                  ADD EXPENSE
+                  ADD INCOME
              </Button>
               <Snackbar
                   open={this.state.open}

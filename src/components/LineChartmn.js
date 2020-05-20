@@ -69,6 +69,7 @@ export default class LineChartmn extends React.Component {
       <div>
         <Line data={this.state.Data} 
         options={this.state.options}
+        
          />
       </div>
     )
