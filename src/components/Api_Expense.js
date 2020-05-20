@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './card.css';
 import axios from 'axios';
 import Cards from './Cards';
-
+import * as API from '../constants/Api';
 class Expense extends Component{
     state ={
         items: [],
@@ -14,7 +14,7 @@ class Expense extends Component{
         "07":"July","08":"August","09":"September","10":"October","11":"November","12":"December",};
         console.log(this.props.dataA)
         if(this.props.dataA){
-            axios.get("http://localhost:8081/tracker/register/getIncome",{ params: {userId:this.props.message}})
+            axios.get(API.GET_EXPENSE,{ params: {userId:this.props.message}})
             .then(res => {
                 for (var key in res.data) {
                     parts=res.data[key].DATE.split("-");
@@ -28,7 +28,7 @@ class Expense extends Component{
         }
         
         if(this.props.dataB){
-            axios.get("http://localhost:8081/tracker/register/getExpense",{ params: {userId:this.props.message}})
+            axios.get(API.GET_INCOME,{ params: {userId:this.props.message}})
             .then(res => {
                 for (var key in res.data) {
                     parts=res.data[key].DATE.split("-");
@@ -41,7 +41,7 @@ class Expense extends Component{
         }
 
         if(this.props.dataBoth){
-            axios.get("http://localhost:8081/tracker/register/getIncomeExpense",{ params: {userId: this.props.message}})
+            axios.get(API.GET_INCOME_EXPENSE,{ params: {userId: this.props.message}})
             .then(res => {
                 for (var key in res.data) {
                     parts=res.data[key].DATE.split("-");

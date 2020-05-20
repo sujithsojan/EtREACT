@@ -9,6 +9,7 @@ import NumberFormat from 'react-number-format';
 import PropTypes from 'prop-types';
 import Snackbar from '@material-ui/core/Snackbar';
 import Fade from '@material-ui/core/Fade';
+import * as API from '../constants/Api';
 
 var date = new Date();
     var moment = require('moment');
@@ -186,7 +187,7 @@ const styles = theme => (
   //Following function will be called by default on page load
   
    componentDidMount() {  
-    axios.get('http://localhost:8081/tracker/register/liscategoryincome')
+    axios.get(API.CAT_LIST_INCOME)
     .then(response => {  
             console.log("____________",response.data);  
             this.setState({  

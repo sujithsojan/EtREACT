@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {HorizontalBar} from 'react-chartjs-2';
 import axios from 'axios';
+import * as API from '../constants/Api';
 
 export default class TotalBarmn extends Component
 {
@@ -12,7 +13,7 @@ export default class TotalBarmn extends Component
     }
        
       componentDidMount() {
-        axios.get(`http://localhost:8081/tracker/register/TotalExpenseTotalIncomeBar_month`,{params:{userId: this.props.message}})
+        axios.get(API.BAR_MONTH,{params:{userId: this.props.message}})
           .then(res => {
             let amount=[];
             amount.push(res.data.TotalIncome);

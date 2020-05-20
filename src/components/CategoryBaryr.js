@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {HorizontalBar} from 'react-chartjs-2';
 import axios from 'axios';
+import * as API from '../constants/Api';
 
 export default class CategoryBaryr extends Component
 {
@@ -12,7 +13,7 @@ export default class CategoryBaryr extends Component
    }
       
      componentDidMount() {
-       axios.get(`http://localhost:8081/tracker/register/yearlycategorysum`,{params:{userId: this.props.message}})
+       axios.get(API.CAT_BAR_YEAR,{params:{userId: this.props.message}})
          .then(res => {
        const response = res.data;
        let category=[];
