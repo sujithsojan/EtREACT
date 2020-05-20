@@ -74,6 +74,7 @@
     color: white;
     font-size: 50px;
     overflow: auto;
+    font-weight: bold;
     font-family: "Bold 35px/37px source sans pro";
     /* left: 20%; */
     }

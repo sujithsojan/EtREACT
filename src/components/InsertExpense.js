@@ -190,6 +190,7 @@ const styles = theme => (
   }
 }
 
+componentDidUpdate(open){}
   //Following function will be called by default on page load
   
    componentDidMount() {  

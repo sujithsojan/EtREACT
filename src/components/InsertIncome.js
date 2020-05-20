@@ -181,11 +181,12 @@ const styles = theme => (
     selex:'',
     selectedOption: '',
     ProductData: [] ,
+    open: false,
   }
 }
 
   //Following function will be called by default on page load
-  
+  componentDidUpdate(open){}
    componentDidMount() {  
     axios.get(API.CAT_LIST_INCOME)
     .then(response => {  
@@ -237,7 +238,7 @@ const styles = theme => (
     console.log("dfdf");
     axios.post(`http://localhost:8081/tracker/register/addincome?userId=${this.props.message}&item=${this.state.item}&categoryId=${this.state.selex.value}&amount=${this.state.amount}&transactionDate=${this.state.date}`)    .then(res => {
       console.log("res="+res);
-      this.setState({ open: true });  
+      this.setState({ open: true ,amount:'',item:'',selex:'',date:formatedDate});  
     })
   }
 
@@ -266,7 +267,7 @@ const styles = theme => (
                     onChange={this.handleChange1}
                     name="date" 
                     type="date"
-                    defaultValue={formatedDate}
+                    value={this.state.date}
                     className={classes.datepickerx}
                     required                    
                     />
@@ -280,6 +281,7 @@ const styles = theme => (
               className={classes.textField} 
               label="Item" 
               name="item" 
+              value={this.state.item}
               onChange={this.handleChange2}/>
 
             {/* Amount field */}
@@ -288,6 +290,7 @@ const styles = theme => (
               label="Amount"
               required
               name="amount"
+              value={this.state.amount}
               onChange={this.handleChange3}
               InputProps={{
                 inputComponent: NumberFormatCustom,
@@ -304,7 +307,7 @@ const styles = theme => (
                 required
                 className={classes.textField}
                 options={options}
-                values=''
+                value={this.state.selex}
                 required
                 getOptionLabel={option => option.label}       
                 onOptionSelected={this.handleOptionSelected}

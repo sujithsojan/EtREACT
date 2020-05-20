@@ -112,7 +112,7 @@ plugins: {
     color: '#000000',
     font: {
       size: 15,
-      weight: 600
+      weight: 300
     },
     offset: 4,
     padding: 0,

@@ -29,11 +29,11 @@ class CheckBox extends Component{
       <div>
         <header style={{paddingTop:"10px", paddingBottom:"50px", }}>
           <div class="row" id="id">
-            <div class="block"><FormControlLabel 
+            <div class="block"><FormControlLabel className="expense1"
                 control={<Checkbox  style={{color:"#F35B8C", visibility:"visible"}} name="checkedA" onChange={ this.handleCheckedA }/>}
                 label="Expense" /></div>
                     
-            <div class="block"><FormControlLabel 
+            <div class="block"><FormControlLabel className="income1"
                 control={<Checkbox style={{color:"#69B5FF" }} name="checkedB" onChange={ this.handleCheckedB } />}
                 label="Income"/></div>
 

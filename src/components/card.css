@@ -9,9 +9,12 @@
 
 
 
-.expense{color: #F35B8C;}
+.expense1{color: #F35B8C;
+ 
+  font-weight: bold;
+  }
 
-.income{color: #69B5FF; }
+.income1{color: #69B5FF;  font-weight: bold; }
 
 .style{
 

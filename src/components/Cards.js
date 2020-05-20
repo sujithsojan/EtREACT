@@ -21,14 +21,14 @@ class Cards extends Component{
                     <Card  style={{width:"100%",paddingTop:"10px", paddingBottom:"10px",marginBottom:"20px"}}>
                         
                             <mat-card  class="card-container" style={{color:this.type_check(item.TYPE) }} >
-                                <mat-card-title class="card-container-right" >{item.DATE}</mat-card-title>
-                                <mat-card-title className="card-container-left" > {item.CATEGORY}
+                                <mat-card-title class="card-container-right" style={{font: "regular 18px/37px source sans pro" }}>{item.DATE}</mat-card-title>
+                                <mat-card-title className="card-container-left"style={{font: "regular 18px/37px source sans pro" }} > {item.CATEGORY}
                                 </mat-card-title>  
                             </mat-card>
 
                             <mat-card  class="card-container" style={{color:"#000000" }} >
-                                <mat-card-title class="card-container-right"  > {item.ITEM}</mat-card-title>
-                                <mat-card-title className="card-container-left"  > {item.AMOUNT}
+                                <mat-card-title class="card-container-right" style={{font: " 24px Courier New" }} > {item.ITEM}</mat-card-title>
+                                <mat-card-title className="card-container-left" style={{font: " Bold 21px source sans pro" }} > {item.AMOUNT}
                                 </mat-card-title>  
                             </mat-card>
                     </Card>
