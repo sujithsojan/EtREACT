@@ -9,11 +9,17 @@ import NumberFormat from 'react-number-format';
 import PropTypes from 'prop-types';
 import Snackbar from '@material-ui/core/Snackbar';
 import Fade from '@material-ui/core/Fade';
+
 import * as API from '../constants/Api';
+
+
+
 var date = new Date();
-    var moment = require('moment');
-    var dateIn = moment(date);
-    var formatedDate=dateIn.format("YYYY-MM-DD");
+var moment = require('moment');
+var dateIn = moment(date);
+var formatedDate=dateIn.format("YYYY-MM-DD");
+
+
 //Adding js styles
 const styles = theme => (
     {
@@ -180,6 +186,7 @@ const styles = theme => (
     selex:'',
     selectedOption: '',
     ProductData: [] ,
+    open: false,
   }
 }
 
@@ -237,14 +244,11 @@ const styles = theme => (
     console.log("dfdf");
     axios.post(`http://localhost:8081/tracker/register/addexpense?userId=${this.props.message}&item=${this.state.item}&categoryId=${this.state.selex.value}&amount=${this.state.amount}&transactionDate=${this.state.date}`)    .then(res => {
       console.log("res="+res);
-      this.setState({ open: true });
-    })
+      this.setState({ open: true,amount:'',item:'',selex:'',date:formatedDate });    })
   }
 
   render() {
 
-    
-    console.log(formatedDate);
 
     const { classes } = this.props;
 
@@ -267,7 +271,7 @@ const styles = theme => (
                     onChange={this.handleChange1}
                     name="date" 
                     type="date"
-                    defaultValue={formatedDate}
+                    value={this.state.date}
                     className={classes.datepickerx}
                     required                    
                     />
@@ -281,6 +285,7 @@ const styles = theme => (
               className={classes.textField} 
               label="Item" 
               name="item" 
+              value={this.state.item}
               onChange={this.handleChange2}/>
 
             {/* Amount field */}
@@ -289,6 +294,7 @@ const styles = theme => (
               label="Amount"
               required
               name="amount"
+              value={this.state.amount}
               onChange={this.handleChange3}
               InputProps={{
                 inputComponent: NumberFormatCustom,
@@ -305,7 +311,7 @@ const styles = theme => (
                 required
                 className={classes.textField}
                 options={options}
-                values=''
+                value={this.state.selex}
                 required
                 getOptionLabel={option => option.label}       
                 onOptionSelected={this.handleOptionSelected}
@@ -338,4 +344,3 @@ const styles = theme => (
   }
 }
 export default withStyles(styles)(InsertExpense);
-
