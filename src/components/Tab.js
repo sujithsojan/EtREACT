@@ -15,6 +15,7 @@ import TotalBarmn from './TotalBarmn';
 import LineChartmn from './LineChartmn';
 import CategoryBarmn from './CategoryBarmn';
 import { Container } from '@material-ui/core';
+import * as API from '../constants/Api';
 
 
 
@@ -138,22 +139,22 @@ export default function CustomizedTabs(props) {
         <TabPanel  value={value} index={0} dir={theme.direction} >
         
           <div id="cbar">
-        < TotalBarmn  message = {props.message}/>
+        < TotalBarmn  message = {props.message} api ={API.BAR_MONTH}/>
         </div>
         <div id="cline">
-        <LineChartmn  message = {props.message}/>
+        <LineChartmn  message = {props.message}  api = {API.LINE_MONTH}/>
         </div>
-        <CategoryBarmn  message = {props.message}/>
+        <CategoryBarmn  message = {props.message} api ={API.CAT_BAR_MONTH}/>
       </TabPanel>
 
         <TabPanel  value={value} index={1} dir={theme.direction} >
         <div id="cbar">
-        < TotalBaryr  message = {props.message}/>
+        < TotalBarmn  message = {props.message} api ={API.BAR_YEAR}/>
         </div>
         <div id="cline">
-        <LineChartyr  message = {props.message}/>
+        <LineChartmn  message = {props.message} api = {API.LINE_YEAR}/>
         </div>
-        <CategoryBaryr  message = {props.message}/>
+        <CategoryBarmn  message = {props.message} api ={API.CAT_BAR_YEAR}/>
         </TabPanel>
         
       </SwipeableViews>

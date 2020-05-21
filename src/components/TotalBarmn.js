@@ -14,7 +14,7 @@ export default class TotalBarmn extends Component
     }
        
       componentDidMount() {
-        axios.get(API.BAR_MONTH,{params:{userId: this.props.message}})
+        axios.get(this.props.api,{params:{userId: this.props.message}})
           .then(res => {
             let amount=[];
             amount.push(res.data.TotalIncome);

@@ -15,7 +15,7 @@ export default class Categorybarmn extends Component
     }
        
       componentDidMount() {
-        axios.get(API.CAT_BAR_MONTH,{params:{userId:  this.props.message}})
+        axios.get(this.props.api,{params:{userId:  this.props.message}})
           .then(res => {
         const response = res.data;
         let category=[];
