@@ -10,26 +10,37 @@ import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import {browserHistory} from 'react-router';
 
-
+var errormsg='';
 class Login extends Component {    
 state = {
     username:'',
     password:'',
-    User : [] 
+    User : [],
+    showError: false 
 };
     validate = (state) =>{
         var uname = this.state.username;
         var pass =  this.state.password;
+        //console.log(errormsg)
         
         if(uname===null || uname === '' || pass===null || pass==='')
             {
-                alert("Username / Password Missing!!!");
+                errormsg="Username / Password Missing!!!";
+                this.setState((prevState, props) => {
+                    return { showError: true }
+                  })
             }
         else if (!/\S+@\S+\.\S+/.test(uname)) {
-                alert('Email address is invalid!!!');
+            errormsg='Email address is invalid!!!';
+            this.setState((prevState, props) => {
+                return { showError: true }
+              })
               }
         else if (pass.length < 8) {
-                alert('Password must be 8 or more characters!!!');
+            errormsg='Password must be 8 or more characters!!!';
+            this.setState((prevState, props) => {
+                return { showError: true }
+              })
               }
         else {
              //browserHistory.push('/Home');
@@ -42,9 +53,16 @@ state = {
             console.log(this.state.User);
             if(this.state.User.length === 0)
               {
-                  alert("Username / Password Incorrect!!!");
+                errormsg="Username / Password Incorrect!!!";
+                this.setState((prevState, props) => {
+                    return { showError: true }
+                  })
               }
               else{
+                this.setState((prevState, props) => {
+                    return { showError: false }
+                  })
+
 
                 this.state.User.map((userlist)=>
          (
@@ -56,8 +74,11 @@ state = {
               }  
             })
             .catch(error => {
-                console.log(error);
-                alert('Error fetching and parsing data', error);
+                errormsg='Error fetching and parsing data'+ error;
+                this.setState((prevState, props) => {
+                    return { showError: true }
+                  })
+
               });           
         }
     }
@@ -71,6 +92,9 @@ state = {
                 <img src={Background} alt="Background"/>
             </div>
             <div className="split right">
+            <div>
+                {this.state.showError && <div className="error-message">{errormsg}</div>}        
+            </div>
                 <div className='rightcontainer' >
                     <h1>DEX Expenses</h1>
                     <h2>Please login to your account.</h2>

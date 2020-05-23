@@ -8,13 +8,9 @@ import PropTypes from 'prop-types';
 import Box from '@material-ui/core/Box';
 
 import './Style.css';
-import TotalBaryr from './TotalBaryr';
-import LineChartyr from './LineChartyr';
-import CategoryBaryr from './CategoryBaryr';
 import TotalBarmn from './TotalBarmn';
 import LineChartmn from './LineChartmn';
 import CategoryBarmn from './CategoryBarmn';
-import { Container } from '@material-ui/core';
 import * as API from '../constants/Api';
 
 

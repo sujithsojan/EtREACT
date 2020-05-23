@@ -5,8 +5,8 @@ import './card.css';
 class Cards extends Component{
     type_check(type)
     {
-        if(type ==0) return '#F35B8C';
-        if(type ==1) return '#69B5FF';
+        if(type ===0) return '#F35B8C';
+        if(type ===1) return '#69B5FF';
 
     }
     

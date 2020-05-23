@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {HorizontalBar} from 'react-chartjs-2';
 import axios from 'axios';
-import * as API from '../constants/Api';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import Chart from "chart.js";
 Chart.plugins.unregister(ChartDataLabels);
@@ -101,7 +100,6 @@ plugins: {
     align: function(context) {
       var index = context.dataIndex;
       var value = context.dataset.data[index];
-      var invert = Math.abs(value) <= 1;
       return value < 1 ? 'right' : 'right'
     },
     anchor: 'end',

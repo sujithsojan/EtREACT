@@ -1,4 +1,3 @@
-import React from "react";
 
 
 export const GET_EXPENSE = "http://localhost:8081/tracker/register/getExpense";

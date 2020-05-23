@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {HorizontalBar} from 'react-chartjs-2';
 import axios from 'axios';
-import * as API from '../constants/Api';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 export default class TotalBarmn extends Component
@@ -9,16 +8,20 @@ export default class TotalBarmn extends Component
    constructor(props) {
       super(props);
       this.state = {
-        Data: {}
+        Data: {},
+      
       }
     }
-       
+    
       componentDidMount() {
         axios.get(this.props.api,{params:{userId: this.props.message}})
           .then(res => {
             let amount=[];
             amount.push(res.data.TotalIncome);
             amount.push(res.data.TotalExpense);
+
+          
+
             this.setState({ 
               Data: {
                 labels:['Income','Expense'],
@@ -98,7 +101,6 @@ plugins: {
     align: function(context) {
       var index = context.dataIndex;
       var value = context.dataset.data[index];
-      var invert = Math.abs(value) <= 1;
       return value < 1 ? 'right' : 'right'
     },
     anchor: 'start',

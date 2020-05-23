@@ -1,7 +1,6 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
 import axios from 'axios';
-import * as API from '../constants/Api';
 export default class LineChartmn extends React.Component {
   constructor(props) {
     super(props);

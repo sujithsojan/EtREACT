@@ -4,7 +4,10 @@ import './card.css';
 import FullWidthTabs from './CenterTab';
 import CustomizedTabs from './Tab';
 import CheckBox from './CheckBox';
+
 class Home extends Component{
+    
+    
     render(){
         return(
         // <div>

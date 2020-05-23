@@ -56,12 +56,6 @@ const styles = theme => (
             '& label': {
                 color: 'white',
             },
-            '& .MuiInput-underline:after': {
-                borderBottomColor: 'white',
-            },
-            '& .MuiInput-underline:before': {
-                borderBottomColor: 'white',
-            },
             '&:hover fieldset': {
                 borderColor: 'white',
             },
@@ -82,7 +76,6 @@ const styles = theme => (
         marginTop: 50,
         backgroundColor: 'black',
         borderColor: '#007bff',
-        borderRadius: 10,
         '&:hover': {
         backgroundColor: 'black',
         borderColor: '#0062cc',
@@ -186,7 +179,7 @@ const styles = theme => (
 }
 
   //Following function will be called by default on page load
-  componentDidUpdate(open){}
+  
    componentDidMount() {  
     axios.get(API.CAT_LIST_INCOME)
     .then(response => {  
@@ -236,7 +229,7 @@ const styles = theme => (
   handleSubmit = event => {
     event.preventDefault();
     console.log("dfdf");
-    axios.post(`http://localhost:8081/tracker/register/addincome?userId=${this.props.message}&item=${this.state.item}&categoryId=${this.state.selex.value}&amount=${this.state.amount}&transactionDate=${this.state.date}`)    .then(res => {
+    axios.post(`http://localhost:8081/tracker/register/addincome?userId=${this.props.message}&item=${this.state.item}&categoryId=${this.state.selex.value}&amount=${this.state.amount}&transactionDate=${this.state.date}`).then(res => {
       console.log("res="+res);
       this.setState({ open: true ,amount:'',item:'',selex:'',date:formatedDate});  
     })
@@ -308,7 +301,6 @@ const styles = theme => (
                 className={classes.textField}
                 options={options}
                 value={this.state.selex}
-                required
                 getOptionLabel={option => option.label}       
                 onOptionSelected={this.handleOptionSelected}
                 onChange={this.handleOptionSelected}

@@ -76,3 +76,9 @@ h2{
 .area {
     padding-left: 30px;
 }
+.error-message {
+    background-color: #e90d0d;
+    color: white;
+    padding: 1em;
+    text-align: center;
+  }

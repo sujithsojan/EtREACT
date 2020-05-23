@@ -136,7 +136,7 @@ export default function FullWidthTabs(props) {
 
           {/* Specifying Tab contents */}
         <TabPanel className="reddiv"  value={value} index={0} dir={theme.direction}>
-        <InsertExpense message={props.message}/>
+        <InsertExpense message={props.message} />
 
         </TabPanel>
         <TabPanel className="bluediv"  value={value} index={1} dir={theme.direction}>
