@@ -18,16 +18,16 @@
   
   
 
-  .reddiv{height: 92.2vh; background-color:  #F35B8C;}
+  .reddiv{height: 89.5vh; background-color:  #F35B8C;}
 
-  .bluediv{height: 92.2vh; background-color:   #69B5FF;}
+  .bluediv{height: 89.5vh; background-color:   #69B5FF;}
 
   /* #whitetext{ color: white; text-emphasis-color: white;  width: 50vh; padding-top: 30px; margin-top: 30px; align-items: center; size: 50px;background-color: "blue"} */
 
   .textdiv{
     align-self: center;
-    margin-left: 9%;
-    margin-top: 20%;
+    margin-left: 5%;
+    margin-top: 15%;
   }
 
   .labelclass{
@@ -47,13 +47,13 @@
   /* Control the left side */
   .left1 {
     left: 0;
-    width: 30%;
+    width: 31.5%;
     background-color: #F35B8C;
   }
   /* Control the center side */
   .center1 {
-    left: 30%;
-    width: 60%;
+    left: 31.5%;
+    width: 63%;
     background-color: rgb(235, 228, 228);
     
     overflow: hidden;
@@ -61,7 +61,7 @@
   /* Control the right side */
   .right1 {
     right: 0;
-    width: 40%;
+    width: 37%;
     background-color: #ffffff;
   }
   
@@ -72,10 +72,10 @@
     text-align: center;
     background: #A4A1FB;
     color: white;
-    font-size: 50px;
+    font-size: 35px;
     overflow: auto;
     font-weight: bold;
-    font-family: "Bold 35px/37px source sans pro";
+    font-family: Bold 35px/37px source sans pro;
     /* left: 20%; */
     }
 
@@ -115,11 +115,11 @@
     }
     #cbar{
       width: 50%;
-     
+      padding-bottom: 45px;
     }
     #cline{
       width: 80%;
-      padding-bottom: 20px;
+      padding-bottom: 45px;
      
     }
     #barchart{

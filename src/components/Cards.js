@@ -18,7 +18,7 @@ class Cards extends Component{
            
             <div> 
                 {items.map(item =>(
-                    <Card  style={{width:"100%",paddingTop:"10px", paddingBottom:"10px",marginBottom:"20px"}}>
+                    <Card  style={{width:"100%",paddingTop:"10px", paddingBottom:"10px",marginBottom:"20px", paddingLeft:"10px"}}>
                         
                             <mat-card  class="card-container" style={{color:this.type_check(item.TYPE) }} >
                                 <mat-card-title class="card-container-right" style={{font: "regular 18px/37px source sans pro" }}>{item.DATE}</mat-card-title>
@@ -28,7 +28,7 @@ class Cards extends Component{
 
                             <mat-card  class="card-container" style={{color:"#000000" }} >
                                 <mat-card-title class="card-container-right" style={{font: " 24px Courier New" }} > {item.ITEM}</mat-card-title>
-                                <mat-card-title className="card-container-left" style={{font: " Bold 21px source sans pro" }} > {item.AMOUNT}
+                                <mat-card-title className="card-container-left" style={{font: " Bold 24px source sans pro" }} > {item.AMOUNT}
                                 </mat-card-title>  
                             </mat-card>
                     </Card>

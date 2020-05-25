@@ -14,13 +14,13 @@
   font-weight: bold;
   }
 
-.income1{color: #69B5FF;  font-weight: bold; }
+.income1{color: #69B5FF;  font-weight: bold;  }
 
 .style{
 
 position: absolute;
-left: 2%;
-right: 51.5%;
+left: 4%;
+right: 53.5%;
 
 
 }
@@ -29,7 +29,7 @@ right: 51.5%;
   display: flex;
   padding: 10px;
   justify-content: space-between;
-  width: 480px;
+  width: 435px;
   }
   .row {
     width: 180%;

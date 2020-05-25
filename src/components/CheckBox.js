@@ -27,14 +27,14 @@ class CheckBox extends Component{
     if (isCheckedB && isCheckedA){ both = <Expense dataBoth={this.state.isCheckedA} message = {this.props.message}/>; }
     return(
       <div>
-        <header style={{paddingTop:"10px", paddingBottom:"50px", }}>
+        <header style={{paddingTop:"30px", paddingBottom:"50px", }}>
           <div class="row" id="id">
             <div class="block"><FormControlLabel className="expense1"
-                control={<Checkbox  style={{color:"#F35B8C", visibility:"visible"}} name="checkedA" onChange={ this.handleCheckedA }/>}
+                control={<Checkbox  style={{color:"#F35B8C", visibility:"visible",}} name="checkedA" onChange={ this.handleCheckedA }/>}
                 label="Expense" /></div>
                     
             <div class="block"><FormControlLabel className="income1"
-                control={<Checkbox style={{color:"#69B5FF" }} name="checkedB" onChange={ this.handleCheckedB } />}
+                control={<Checkbox style={{color:"#69B5FF",  }} name="checkedB" onChange={ this.handleCheckedB } />}
                 label="Income"/></div>
 
             <div class="block"><SimpleMenu/></div>

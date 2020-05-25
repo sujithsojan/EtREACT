@@ -28,7 +28,7 @@ const styles = theme => (
         flexWrap: 'wrap',
     },
     datepickerx:{
-        width: 150,
+        width: 120,
         underline: {
             "&&&:before": {
             color: "white"
@@ -41,7 +41,7 @@ const styles = theme => (
                 borderColor: 'white',
             },
             '& .MuiInput-input':{ color: "white"},
-            paddingLeft: 80,
+            paddingLeft: 140,
             color: "white",
             textEmphasisColor: "white",
             '& .MuiInput-underline:before': {
@@ -77,9 +77,11 @@ const styles = theme => (
         border: 0,
         borderRadius: 3,
         color: "white",
-        width:400,
+        width:490,
+        height: 50,
         marginTop: 50,
-        backgroundColor: 'black',
+        textTransform: 'none',
+        backgroundColor: '#37364b',
         borderColor: '#007bff',
         // borderRadius: 10,
         '&:hover': {
@@ -101,7 +103,7 @@ const styles = theme => (
     textField: {
         marginLeft: theme.spacing.unit,
         marginRight: theme.spacing.unit,
-        width: 400,
+        width: 475,
         paddingTop: 10,
         marginTop: 20,
         color: "white",
@@ -269,13 +271,13 @@ const styles = theme => (
                     className={classes.datepickerx}
                     required                    
                     />
-                    <CalendarTodayIcon style={{ fontSize: 25, paddingLeft:100 }}  />
+                    <CalendarTodayIcon style={{ fontSize: 25, paddingLeft:120 }}  />
             </label>
 
             {/* Item Field */}
 
             <TextField 
-              required 
+             InputLabelProps={{required: false}}  
               className={classes.textField} 
               label="Item" 
               name="item" 
@@ -286,7 +288,7 @@ const styles = theme => (
             <TextField
               className={classes.textField}
               label="Amount"
-              required
+              InputLabelProps={{required: false}}  
               name="amount"
               value={this.state.amount}
               onChange={this.handleChange3}
@@ -318,7 +320,7 @@ const styles = theme => (
 
             <div> 
              <Button className={classes.Button}  variant="contained" disableElevation type="submit">
-                  ADD EXPENSE
+                  Add Expense
              </Button>
               <Snackbar
                   open={this.state.open}

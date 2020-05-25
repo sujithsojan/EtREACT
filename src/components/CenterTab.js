@@ -51,7 +51,7 @@ function a11yProps(index) {
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: '#F35B8C',
-    height:75,
+    height:100,
     fontSize:35,
     color: "white",
     textTransform: 'none',
