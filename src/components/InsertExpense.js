@@ -277,7 +277,8 @@ const styles = theme => (
             {/* Item Field */}
 
             <TextField 
-             InputLabelProps={{required: false}}  
+              required
+              InputLabelProps={{required: false}}  
               className={classes.textField} 
               label="Item" 
               name="item" 
@@ -288,6 +289,7 @@ const styles = theme => (
             <TextField
               className={classes.textField}
               label="Amount"
+              required
               InputLabelProps={{required: false}}  
               name="amount"
               value={this.state.amount}
@@ -312,7 +314,7 @@ const styles = theme => (
                 onOptionSelected={this.handleOptionSelected}
                 onChange={this.handleOptionSelected}
                 renderInput={(params) => (
-                <TextField {...params} label="Category" margin="normal" />
+                <TextField required InputLabelProps={{required: false}}  {...params} label="Category" margin="normal" />
                 )}
             />        
 
