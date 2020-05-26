@@ -281,6 +281,7 @@ const styles = theme => (
               className={classes.textField} 
               label="Item" 
               name="item" 
+              required
               value={this.state.item}
               onChange={this.handleChange2}/>
 
@@ -290,6 +291,7 @@ const styles = theme => (
               label="Amount"
               InputLabelProps={{required: false}}  
               name="amount"
+              required
               value={this.state.amount}
               onChange={this.handleChange3}
               InputProps={{
