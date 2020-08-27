@@ -1,0 +1,51 @@
+.card_style {   
+
+  min-width: 100%;
+  min-height: 100px;   
+  margin-bottom: 10px;
+  
+  
+}
+
+
+
+.expense1{color: #F35B8C;
+ 
+  font-weight: bold;
+  }
+
+.income1{color: #69B5FF;  font-weight: bold;  }
+
+.style{
+
+position: absolute;
+left: 4%;
+right: 53.5%;
+
+
+}
+
+.card-container {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  width: 435px;
+  }
+  .row {
+    width: 180%;
+    margin: 0 auto;
+    z-index: 0;
+  }
+  .block {
+    width: 225px;
+    display: inline-block
+  
+  }
+
+  .card_area_style {   
+
+    top:30%;
+    margin-top: 125px;
+    z-index: 1;
+    
+}

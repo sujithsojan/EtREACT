@@ -1,0 +1,86 @@
+/* .menu{
+    padding-left: 0%;
+}
+
+.export{
+    padding-right: 0%;
+} */
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300);
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+body {
+    padding: 0px 0px;
+}
+
+.date-picker,
+.date-container {
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    margin-block-start: 0px;
+    color: rgb(75, 77, 78);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.date-container {
+       
+    padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+
+.date-picker h2, .date-picker h4 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+}
+
+.date-container{
+    text-align: center;
+
+}
+.date-picker span.fa {
+    position: absolute;
+    cursor: pointer;
+}
+.date-picker span.fa[data-method="subtract"] {
+    left: 0px;
+}
+.date-picker span.fa[data-method="add"] {
+    right: 0px;
+}
+
+
+@media (min-width: 768px) and (max-width: 1010px) {
+    .date-picker h2{
+        font-size: 1.2em; 
+        font-weight: 600;  
+        color:#A4A1FB;
+    }    
+    .date-picker h4 {
+        font-size: 1em;
+    }  
+    .date-picker span.fa {
+        font-size: 3em;
+    } 
+}
+
+.font1{
+    font-size: 15px;
+    color: #A4A1FB;
+    margin-left: 0px;
+    margin-right: 10px;
+}
+
+.font2{ font-size: 15px;
+    color:#A4A1FB;
+    
+}
