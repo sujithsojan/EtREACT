@@ -9,12 +9,12 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "proxy": "http://localhost:3000",
     "axios": "^0.19.2",
     "chart.js": "^2.9.3",
     "chartjs-plugin-datalabels": "^0.7.0",
     "moment": "^2.25.3",
     "prop-types": "^15.7.2",
+    "proxy": "http://localhost:3000",
     "react": "^16.13.1",
     "react-chartjs-2": "^2.9.0",
     "react-dom": "^16.13.1",
@@ -22,7 +22,8 @@
     "react-router": "^3.2.6",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "react-swipeable-views": "^0.13.9"
+    "react-swipeable-views": "^0.13.9",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "react-scripts start",
